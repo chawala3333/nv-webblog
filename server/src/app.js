@@ -6,6 +6,8 @@ const app = express()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
+require('./routes')(app)
+
 app.get('/status', function (req, res ){
  res.send('Hello nodejs server')
 })
@@ -15,32 +17,9 @@ app.get('/hello/:person', function (req,res) {
  res.send('sey hello with ' + req.params.person)
 })
 
-// get user by id
-app.get('/user/:userId', function (req, res) {
- res.send('ดูข้อมูลผู้ใช้งาน: ' + req.params.userId)
-})
-
-// get all user
-app.get('/users', function (req, res) {
- res.send('เรียกข้อมูล ผู้ใช้งานทั้งหมด')
-})
-
-// create user
-app.post('/user/', function (req, res) {
- res.send('ทําการสร้างผู้ใช้งาน: ' + JSON.stringify(req.body))
-})
-
-// edit user
-app.put('/user/:userId', function (req, res) {
- res.send('ทาํการแกไ้ขผใุ้ชง้าน: ' + req.params.userId + ' : ' +
-JSON.stringify(req.body))
-})
-
-// delete user
-app.delete('/user/:userId', function (req, res) {
- res.send('ทําการลบผุ้ใช้งาน: ' + req.params.userId + ' : ' + 
- JSON.stringify(req.body))
-})
+app.post('/hello', function (req, res) {
+  res.send('OK you post - ' + req.body.name)
+ })
 
 let port = 8081
 
