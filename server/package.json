@@ -14,6 +14,12 @@
     "express": "^4.16.4",
     "node-pre-gyp": "^0.12.0",
     "sequelize": "^4.43.0",
-    "sqlite3": "^4.0.6"
+    "sqlite3": "^4.0.6",
+    "bcrypt-nodejs": "^0.0.3",
+    "bluebird": "^3.5.3",
+    "joi": "^13.7.0",
+    "jsonwebtoken": "^8.4.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
   }
 }
